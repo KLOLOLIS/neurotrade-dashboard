@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>NeuroTrade AI - Dashboard</title>
+ <style>
+ body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: white; margin: 0; padding: 0; }
+.container { max-width: 800px; margin: 0 auto; padding: 20px; }
+.header { text-align: center; margin-bottom: 30px; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+.card { background: #1e293b; padding: 15px; border-radius: 10px; border: 1px solid #334155; }
+.card h3 { margin: 0 0 5px 0; font-size: 14px; color: #94a3b8; }
+.card p { margin: 0; font-size: 24px; font-weight: bold; color: #10b981; }
+.chart { height: 200px; background: #0f172a; border: 1px solid #334155; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: flex-end; padding: 10px; gap: 5px; }
+.bar { flex: 1; background: #3b82f6; border-radius: 2px 2px 0 0; transition: height 0.5s; }
+.signals { list-style: none; padding: 0; }
+.signals li { background: #1e293b; margin-bottom: 10px; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border-left: 4px solid #10b981; }
+.signal-buy { border-left-color: #10b981; }
+.signal-sell { border-left-color: #ef4444; }
+.btn { display: block; width: 100%; padding: 15px; background: #3b82f6; color: white; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold; margin-bottom: 10px; }
+ </style>
+</head>
+<body>
+ <div class="container">
+ <div class="header">
+ <h1>🤖 NeuroTrade AI v5.2</h1>
+ <p>Autopiloto de Trading con Inteligencia Artificial</p>
+ </div>
+
+ <div class="stats">
+ <div class="card">
+ <h3>Ganancia Hoy</h3>
+ <p>$1,240.50</p>
+ </div>
+ <div class="card">
+ <h3>Operaciones</h3>
+ <p>24</p>
+ </div>
+ <div class="card">
+ <h3>Win Rate</h3>
+ <p>87%</p>
+ </div>
+ </div>
+
+ <div class="chart" id="chart">
+ <!-- Las barras se generan con JS -->
+ </div>
+
+ <ul class="signals">
+ <li class="signal-buy">
+ <span>🔵 BTC/USDT</span>
+ <span>Compra - $64,200</span>
+ </li>
+ <li class="signal-sell">
+ <span>🔴 ETH/USDT</span>
+ <span>Venta - $3,450</span>
+ </li>
+ <li class="signal-buy">
+ <span>🔵 SOL/USDT</span>
+ <span>Compra - $145.20</span>
+ </li>
+ </ul>
+
+ <a href="https://t.me/tu_bot_aqui" class="btn">Unirse al Bot VIP 🚀</a>
+ </div>
+
+ <script>
+ // Generar barras aleatorias para el gráfico
+ const chart = document.getElementById('chart');
+ for (let i = 0; i < 20; i++) {
+ const bar = document.createElement('div');
+ bar.className = 'bar';
+ bar.style.height = Math.floor(Math.random() * 80 + 20) + '%';
+ chart.appendChild(bar);
+ }
+ </script>
+</body>
+</html>
